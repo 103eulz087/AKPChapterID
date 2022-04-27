@@ -1911,7 +1911,7 @@ namespace IDProject
 
         void populateCountry()
         {
-            Database.displaySearchlookupEdit("SELECT COUNTRY_CODE,COUNTRY_NAME FROM Countries WHERE COUNTRY_CODE IN ('63','61','972','60','39','1','973')", txtchaptercountries, "COUNTRY_NAME", "COUNTRY_NAME"); 
+            Database.displaySearchlookupEdit("SELECT COUNTRY_CODE,COUNTRY_NAME FROM PopulateCountry", txtchaptercountries, "COUNTRY_NAME", "COUNTRY_NAME"); 
         }
 
 
