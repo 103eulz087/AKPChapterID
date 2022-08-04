@@ -156,6 +156,7 @@
             this.exportChapterIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.iCMasterlistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtbdate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbdate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picimage)).BeginInit();
@@ -350,7 +351,8 @@
             this.extractMasterlistToolStripMenuItem,
             this.addChapterLogoToolStripMenuItem,
             this.exportDatabaseICToolStripMenuItem,
-            this.internationCouncilIDToolStripMenuItem});
+            this.internationCouncilIDToolStripMenuItem,
+            this.iCMasterlistToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -1486,6 +1488,13 @@
             this.tabPage1.Text = "Personal Information";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // iCMasterlistToolStripMenuItem
+            // 
+            this.iCMasterlistToolStripMenuItem.Name = "iCMasterlistToolStripMenuItem";
+            this.iCMasterlistToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.iCMasterlistToolStripMenuItem.Text = "IC Masterlist";
+            this.iCMasterlistToolStripMenuItem.Click += new System.EventHandler(this.iCMasterlistToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1674,6 +1683,7 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtactivecountry;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ToolStripMenuItem iCMasterlistToolStripMenuItem;
     }
 }
 

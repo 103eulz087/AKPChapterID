@@ -367,6 +367,12 @@
     <Compile Include="ChapterIDTemplate\IDPrinting.Designer.cs">
       <DependentUpon>IDPrinting.cs</DependentUpon>
     </Compile>
+    <Compile Include="ICMasterlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ICMasterlist.Designer.cs">
+      <DependentUpon>ICMasterlist.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +441,12 @@
     </Compile>
     <Compile Include="Template\Certifcates\CertOfRecognition.Designer.cs">
       <DependentUpon>CertOfRecognition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\ICLetterTemplate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\ICLetterTemplate.Designer.cs">
+      <DependentUpon>ICLetterTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="Template\SAMPLE.cs">
       <SubType>Component</SubType>
@@ -638,6 +650,9 @@
     <EmbeddedResource Include="ChapterIDTemplate\IDPrinting.resx">
       <DependentUpon>IDPrinting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ICMasterlist.resx">
+      <DependentUpon>ICMasterlist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainDashboard.resx">
       <DependentUpon>MainDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -681,6 +696,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Template\Certifcates\CertOfRecognition.resx">
       <DependentUpon>CertOfRecognition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\ICLetterTemplate.resx">
+      <DependentUpon>ICLetterTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Template\SAMPLE.resx">
       <DependentUpon>SAMPLE.cs</DependentUpon>
@@ -814,6 +832,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\URL_History.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICBLANKTEMPLATE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICBLANKTEMPLATE1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

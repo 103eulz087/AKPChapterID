@@ -41,7 +41,7 @@ namespace IDProject
         string globaloldid="";
         bool isIC = false;
         PictureBox pbox,sbox;
-
+        string newmemberid = "";
         public Form1()
         {
             InitializeComponent();
@@ -228,7 +228,7 @@ namespace IDProject
                 SqlCommand com = new SqlCommand(query, con);
                 com.CommandType = CommandType.StoredProcedure;
                 //com.Parameters.AddWithValue("@parmseqno", Convert.ToInt32(txtrollno.Text));
-                com.Parameters.AddWithValue("@parmseqno", txtrollno.Text);
+                com.Parameters.AddWithValue("@parmseqno", newmemberid);
                 com.Parameters.AddWithValue("@parmoldid", globaloldid);
                 com.Parameters.AddWithValue("@parmid", txtid.Text);
                 com.Parameters.AddWithValue("@parmfname", txtfname.Text);
@@ -284,6 +284,7 @@ namespace IDProject
                 com.Parameters.AddWithValue("@parmisnatlid", chcknatlid.Checked); 
                 com.Parameters.AddWithValue("@parmgsname", txtgs.Text); 
                 com.Parameters.AddWithValue("@parmminame", txtmasterinitiator.Text); 
+                com.Parameters.AddWithValue("@parmrollno", txtrollno.Text); 
                 if (picimage.Image != null)
                 {
                     MemoryStream ms11 = new MemoryStream();
@@ -774,9 +775,9 @@ namespace IDProject
                 int ctr = IDGenerator.getIDNumber("MembershipInfo", "ChapterCountryCode='" + chaptercountrycode + "' and ChapterZipCode='" + chapterzipcode + "' " +
                 "and ChapterCode='" + chapterid + "' ", "SEQ_NO");
                 //int ctr = IDGenerator.getIDNumber("MembershipInfo", "ID like SUBSTRING(ID,1,8)%", "SEQ_NO");
-                string newmemberid = Database.sequencePadding1(ctr.ToString(), 6);
-                txtrollno.Text = newmemberid;
-                txtid.Text = chaptercountrycode.ToString() + chapterzipcode.ToString() + chapterid.ToString() + txtrollno.Text;
+                newmemberid = Database.sequencePadding1(ctr.ToString(), 6);
+                //txtrollno.Text = newmemberid;
+                txtid.Text = chaptercountrycode.ToString() + chapterzipcode.ToString() + chapterid.ToString() + newmemberid;
                 txtchapterchaptercode.Text = chapterid.ToString();
             }
             else if (action == "update" && ctrupdate5==1)
@@ -791,9 +792,9 @@ namespace IDProject
                     chapterid = txtchapterchaptercode.Text; ; //SearchLookUpClass.getSingleValue(txtchapter, "ChapterID");
                     int ctr = IDGenerator.getIDNumber("MembershipInfo", "ChapterCountryCode='" + txtchaptercountrycode.Text + "' and ChapterZipCode='" + txtchapterzipcode.Text + "' " +
                     "and ChapterCode='" + chapterid + "' ", "SEQ_NO");
-                    string newmemberid = Database.sequencePadding1(ctr.ToString(), 6);
-                    txtrollno.Text = newmemberid;
-                    txtid.Text = txtchaptercountrycode.Text + txtchapterzipcode.Text + chapterid.ToString() + txtrollno.Text;
+                    newmemberid = Database.sequencePadding1(ctr.ToString(), 6);
+                    //txtrollno.Text = newmemberid;
+                    txtid.Text = txtchaptercountrycode.Text + txtchapterzipcode.Text + chapterid.ToString() + newmemberid;
                     txtchapterchaptercode.Text = chapterid.ToString();
                 }
                 ctrupdate5 += 1;
@@ -810,9 +811,9 @@ namespace IDProject
                     chapterid = SearchLookUpClass.getSingleValue(txtchapter, "ChapterID");
                     int ctr = IDGenerator.getIDNumber("MembershipInfo", "ChapterCountryCode='" + txtchaptercountrycode.Text + "' and ChapterZipCode='" + txtchapterzipcode.Text + "' " +
                     "and ChapterCode='" + chapterid + "' ", "SEQ_NO");
-                    string newmemberid = Database.sequencePadding1(ctr.ToString(), 6);
-                    txtrollno.Text = newmemberid;
-                    txtid.Text = txtchaptercountrycode.Text + txtchapterzipcode.Text + chapterid.ToString() + txtrollno.Text;
+                     newmemberid = Database.sequencePadding1(ctr.ToString(), 6);
+                    //txtrollno.Text = newmemberid;
+                    txtid.Text = txtchaptercountrycode.Text + txtchapterzipcode.Text + chapterid.ToString() + newmemberid;
                     txtchapterchaptercode.Text = chapterid.ToString();
                 }
             }
@@ -1105,6 +1106,7 @@ namespace IDProject
             , ChapterMunicipalityCode
             , ChapterZipCode
             , ChapterCode
+            , RollNumber
             , DateSurvive
             , GiftName
             , GodParent
@@ -1131,7 +1133,7 @@ namespace IDProject
 
             var rowz = Database.getMultipleQuery("MembershipInfo", "ID='" + gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "ID").ToString() + "' ",
             "SEQ_NO,ID,ChapterCountryCode,ChapterRegionCode,ChapterProvinceCode,ChapterMunicipalityCode,ChapterZipCode,ChapterCode," +
-            "DateSurvive,GiftName,GodParent,DateIssued,DateExpiry,LastActiveDate,isActive,isPaid,withForm,isDeducted,MobileSerialKey,GSDuringSurvive,isIC,CouncilName,ActiveCountry,isChapterID,isMunID,isProvID,isReg,isNatlID,Position,GSName,MIName");
+            "RollNumber,DateSurvive,GiftName,GodParent,DateIssued,DateExpiry,LastActiveDate,isActive,isPaid,withForm,isDeducted,MobileSerialKey,GSDuringSurvive,isIC,CouncilName,ActiveCountry,isChapterID,isMunID,isProvID,isReg,isNatlID,Position,GSName,MIName");
 
             SEQ_NO = rowz["SEQ_NO"].ToString();  
             ChapterCountryCode = rowz["ChapterCountryCode"].ToString();
@@ -1140,6 +1142,7 @@ namespace IDProject
             ChapterMunicipalityCode = rowz["ChapterMunicipalityCode"].ToString();
             ChapterZipCode = rowz["ChapterZipCode"].ToString();
             ChapterCode = rowz["ChapterCode"].ToString();
+            RollNumber = rowz["RollNumber"].ToString();
             DateSurvive = rowz["DateSurvive"].ToString();
             GiftName = rowz["GiftName"].ToString();
             GodParent = rowz["GodParent"].ToString();
@@ -1234,33 +1237,6 @@ namespace IDProject
                 chckisic.Checked = false;
             }
 
-            //if (Convert.ToBoolean(isPaid) == true)
-            //{
-            //    chckispaid.Checked = true;
-            //}
-            //else
-            //{
-            //    chckispaid.Checked = false;
-            //}
-
-            //if (Convert.ToBoolean(withForm) == true)
-            //{
-            //    chckwithform.Checked = true;
-            //}
-            //else
-            //{
-            //    chckwithform.Checked = false;
-            //}
-            //if (Convert.ToBoolean(isDeducted) == true)
-            //{
-            //    checkisdeducted.Checked = true;
-            //}
-            //else
-            //{
-            //    checkisdeducted.Checked = false;
-            //}
-
-
             Database.displaySearchlookupEdit("SELECT REGION_CODE,REGION_NAME,REGION_INSTANCE FROM Regions WHERE COUNTRY_CODE = '" + txtchaptercountrycode.Text + "' ", txtchapterregions, "REGION_NAME", "REGION_NAME");
             Database.displaySearchlookupEdit("SELECT PROVINCE_CODE,PROVINCE FROM Provinces WHERE REGION_CODE = '" + txtchapterregioncode.Text + "' ", txtchapterprovinces, "PROVINCE", "PROVINCE");
             Database.displaySearchlookupEdit("SELECT MUNICIPALITY_CODE,MUNICIPALITY,ZIPCODE FROM Municipalities WHERE PROVINCE_CODE = '" + txtchapterprovincecode.Text + "' ", txtchaptermunicipalites, "MUNICIPALITY", "MUNICIPALITY");
@@ -1276,7 +1252,7 @@ namespace IDProject
             txtactivecountry.Text = ActiveCountry;
          
             txtid.Text = ID;
-            txtrollno.Text = Database.sequencePadding1(SEQ_NO, 6);
+            txtrollno.Text = RollNumber;//Database.sequencePadding1(SEQ_NO, 6);
             //txtmobileserialkey.Text = MobileSerialKey;
             //txtgsduringsurvive.Text = GSDuringSurvive;
         }
@@ -1683,6 +1659,13 @@ namespace IDProject
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void iCMasterlistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ICMasterlist frmpc = new ICMasterlist();
+            frmpc.Show();
+        }
+
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -1801,7 +1784,7 @@ namespace IDProject
         private void txtchaptercountries_EditValueChanged(object sender, EventArgs e)
         {
             if (action == "cancel") { txtid.Text = ""; txtrollno.Text = ""; }
-            else if(action != "update")
+                else if(action != "update")
                 {
                     chaptercountrycode = SearchLookUpClass.getSingleValue(txtchaptercountries, "COUNTRY_CODE"); //get country code in gridview
                     txtchaptercountrycode.Text = chaptercountrycode.ToString(); //country code textbox

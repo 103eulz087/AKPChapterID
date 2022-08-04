@@ -127,6 +127,9 @@
   <data name="Currency_32x32 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Currency_32x32 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ICBLANKTEMPLATE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICBLANKTEMPLATE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Announcement_32x32 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Announcement_32x32 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,6 +160,9 @@
   <data name="AddFile_32x32 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddFile_32x32 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="URL_History" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\URL_History.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Alpha_Kappa_Rho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Alpha_Kappa_Rho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,7 +181,7 @@
   <data name="List_32x32 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\List_32x32 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="URL_History" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\URL_History.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICBLANKTEMPLATE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICBLANKTEMPLATE1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

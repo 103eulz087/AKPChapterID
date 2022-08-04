@@ -143,6 +143,26 @@ namespace IDProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ICBLANKTEMPLATE {
+            get {
+                object obj = ResourceManager.GetObject("ICBLANKTEMPLATE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ICBLANKTEMPLATE1 {
+            get {
+                object obj = ResourceManager.GetObject("ICBLANKTEMPLATE1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Image_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Image_32x32", resourceCulture);
